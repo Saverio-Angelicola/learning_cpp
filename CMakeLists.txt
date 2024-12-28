@@ -5,13 +5,11 @@ project(Learning_cpp)
 set(CMAKE_CXX_STANDARD 23)
 
 # Source files
+file(GLOB_RECURSE SOURCES "src/*.h")
 file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB MAIN_FILE "./main.cpp")
 
-# Include directories (if you have headers in "include/")
 include_directories(include)
 
-#Include tests directories
-include_directories(tests)
-
 # Add executable
-add_executable(main ${SOURCES})
+add_executable(main ${SOURCES} ${MAIN_FILE})
